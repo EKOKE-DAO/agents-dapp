@@ -1,6 +1,7 @@
 import Container from '../reusable/Container';
 import { Route } from '../../utils/routes';
 import Link from '../reusable/Link';
+import IcConnect from '../IcConnect';
 
 import EkokeLogo from '../../../assets/images/ekoke-logo.webp';
 
@@ -16,7 +17,9 @@ const Mobile = () => (
         </Container.FlexRow>
       </Container.Container>
     </Container.FlexRow>
-    <Container.FlexRow className="h-[60px] w-full items-center justify-center gap-4"></Container.FlexRow>
+    <Container.FlexRow className="h-[60px] w-full items-center justify-center gap-4">
+      <IcConnect />
+    </Container.FlexRow>
   </div>
 );
 

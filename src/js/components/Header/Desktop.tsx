@@ -1,10 +1,10 @@
 import Container from '../reusable/Container';
-
 import { Route } from '../../utils/routes';
 import TopbarLink from './TopbarLink';
+import Dropdown from './Dropdown';
+import IcConnect from '../IcConnect';
 
 import EkokeLogo from '../../../assets/images/ekoke-logo.webp';
-import Dropdown from './Dropdown';
 
 const Desktop = () => (
   <div className="fixed block sm:hidden left-0 top-0 h-[80px] w-full bg-page z-40 shadow-sm">
@@ -23,7 +23,9 @@ const Desktop = () => (
           ]}
         />
       </Container.FlexRow>
-      <Container.Flex className="flex-1 justify-end 3xl:justify-start px-8"></Container.Flex>
+      <Container.Flex className="flex-1 justify-end 3xl:justify-start px-8">
+        <IcConnect />
+      </Container.Flex>
     </Container.FlexRow>
   </div>
 );
