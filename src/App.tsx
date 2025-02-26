@@ -1,13 +1,16 @@
-import { BrowserRouter } from 'react-router-dom';
+import 'react-loading-skeleton/dist/skeleton.css';
 
-import Router from './Router';
+import AppLayout from './js/components/AppLayout';
+import AppContextProvider from './js/components/App/AppContext';
+import AppError from './js/components/Status/AppError';
+import AppSuccess from './js/components/Status/AppSuccess';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <AppContextProvider>
+    <AppError />
+    <AppSuccess />
+    <AppLayout />
+  </AppContextProvider>
+);
 
 export default App;

@@ -1,7 +1,8 @@
 {
-  "name": "fe-react-template",
+  "name": "agents-dapp",
   "version": "0.1.0",
-  "repository": "git@github.com:veeso/fe-react-template.git",
+  "repository": "git@github.com:EKOKE-DAO/agents-dapp.git",
+  "private": true,
   "author": "Christian Visintin <christian.visintin@veeso.dev>",
   "license": "MIT",
   "type": "module",
@@ -27,13 +28,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "js-cookie": "^3.0",
+    "animate.css": "^4.1.1",
     "leaflet": "^1",
     "react": "^19",
     "react-dom": "^19",
     "react-helmet": "^6",
     "react-icons": "^5.4.0",
-    "react-leaflet": "v5.0.0-rc.1",
+    "react-leaflet": "5.0.0",
+    "react-loading-skeleton": "^3.5.0",
     "react-router-dom": "^6.22"
   },
   "devDependencies": {

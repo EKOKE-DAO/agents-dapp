@@ -19,9 +19,12 @@ const inputValidationStyle = (
   required?: boolean,
   disabled?: boolean,
 ): string => {
+  if (disabled === true) {
+    return 'hover:cursor-not-allowed';
+  }
+
   if (
     required === true &&
-    disabled !== true &&
     (input === undefined || input.toString().length === 0)
   ) {
     return 'ring-yellow-500 ring-2';
@@ -30,17 +33,14 @@ const inputValidationStyle = (
   if (
     validate === undefined ||
     input === undefined ||
-    input.toString().length === 0
+    input.toString().length === 0 ||
+    hasFocus
   ) {
-    if (hasFocus) {
-      return 'ring-2';
-    }
-
     return '';
   }
 
   if (!validate(input)) {
-    return 'ring-2 ring-red-500 bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:border-red-500';
+    return 'bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:border-red-500';
   }
 
   return '';
@@ -105,7 +105,7 @@ const Input = (props: InputProps) => {
 };
 
 interface IconInputProps extends InputProps {
-  icon: React.ReactNode;
+  icon: JSX.Element;
 }
 
 const IconInput = (props: IconInputProps) => {
@@ -211,7 +211,7 @@ const Textarea = (props: TextAreaProps) => {
           hasFocus,
           props.required,
           props.disabled,
-        )} block p-2.5 w-full text-sm text-text bg-white rounded-lg border border-gray-300 focus:ring-brand focus:border-brand focus-visible:outline-none`}
+        )} block p-2.5 w-full text-sm text-text bg-white rounded-lg border border-gray-300 focus:ring-band focus:border-brand focus-visible:outline-none`}
         placeholder={props.placeholder}
         required={props.required}
         onChange={props.onChange}

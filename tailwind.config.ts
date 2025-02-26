@@ -10,16 +10,16 @@ const config: Config = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
-      '3xl': '1600px',
+      '3xl': '1920px',
     },
     extend: {
       colors: {
-        brand: '#31363b',
-        brandAlt: '#31363b',
-        brandLight: '#f9fafb',
-        payPal: 'hsl(42, 100%, 61%)',
-        payPalDark: 'hsl(42, 100%, 51%)',
-        text: 'rgb(107 114 128)',
+        brand: '#000000',
+        brandRed: '#fd6262',
+        brandGray: '#8a8a8a',
+        brandBtn: '#242c46',
+        page: '#f1eef5',
+        text: '#606060',
       },
       fontSize: {
         xl: '1.5rem',
@@ -27,12 +27,11 @@ const config: Config = {
         '3xl': '3.5rem',
         '4xl': '7rem',
       },
-      spacing: {
+      width: {
         page: '80%',
       },
     },
   },
   plugins: [],
 };
-
 export default config;

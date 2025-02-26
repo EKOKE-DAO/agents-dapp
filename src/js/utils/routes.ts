@@ -2,9 +2,10 @@
 
 export enum Route {
   CONTACTS = 'contacts',
-  COOKIE_POLICY = 'cookie-policy',
+  COOKIES = 'cookie-policy',
   HOME = 'home',
   PRIVACY = 'privacy',
+  REAL_ESTATE_CREATE = 'real-estate/create',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

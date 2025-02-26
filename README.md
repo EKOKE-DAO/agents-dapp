@@ -1,38 +1,46 @@
-# {{PROJECT NAME}}
+# Agents D-App
 
-[![CI](https://github.com/veeso-dev/fe-react-template/workflows/CI/badge.svg)](https://github.com/veeso-dev/fe-react-template/actions)
+<p align="center">
+  <img src="./assets/images/ekoke-logo.png" alt="ekoke logo" width="256" />
+</p>
 
----
+![Frontend](https://github.com/EKOKEtoken/agents-dapp/workflows/frontend/badge.svg)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
-## Support the developer ☕
-
-If you like {{PROJECT NAME}} and you're grateful for the work I've done, please consider a little donation 🥳
-
-You can make a donation with one of these platforms:
-
-[![ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/veeso)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.me/chrisintin)
-[![bitcoin](https://img.shields.io/badge/Bitcoin-ff9416?style=for-the-badge&logo=bitcoin&logoColor=white)](https://btc.com/bc1qvlmykjn7htz0vuprmjrlkwtv9m9pan6kylsr8w)
+Powered by **Internet Computer**
 
 ---
 
-## Contributing and issues 🤝🏻
-
-Contributions, bug reports, new features and questions are welcome! 😉
-If you have any question or concern, or you want to suggest a new feature, or you want just want to improve {{PROJECT NAME}}, feel free to open an issue or a PR.
-
-Please follow [our contributing guidelines](CONTRIBUTING.md)
-
----
-
-## Changelog ⏳
-
-View {{PROJECT NAME}}'s changelog [HERE](CHANGELOG.md)
+- [Agents D-App](#agents-d-app)
+  - [Introduction](#introduction)
+  - [Get started](#get-started)
+    - [Dependencies](#dependencies)
+    - [Build](#build)
+  - [Changelog](#changelog)
+  - [License](#license)
 
 ---
 
-## License 📃
+## Introduction
 
-{{PROJECT NAME}} is licensed under the MIT license.
+## Get started
+
+### Dependencies
+
+Before getting started with ekoke, you need to install these dependencies:
+
+- Node >= 22.x
+
+### Build
+
+```sh
+yarn build
+```
+
+## Changelog
+
+Read [CHANGELOG](./CHANGELOG.md)
+
+## License
 
 You can read the entire license [HERE](LICENSE)

@@ -4,49 +4,32 @@ import { Helmet as HelmetImport, HelmetProps } from 'react-helmet';
 
 export const Helmet = HelmetImport as React.ComponentClass<HelmetProps>;
 
-import {
-  isPageNotFound,
-  noIndex,
-  pageDescription,
-  pageOgSiteName,
-  pageTitle,
-} from '../utils/seo';
-import CONTACTS from '../data/contacts';
-
-const LANG = 'en';
+const SITE_URL = 'https://agents.ekokedao.com';
 
 const SeoEngine = () => {
   const { pathname } = useLocation();
-  // states
-  const [title, setTitle] = React.useState(pageTitle(pathname));
-  const [description, setDescription] = React.useState(
-    pageDescription(pathname),
-  );
-  const [ogSiteName, setOgSiteName] = React.useState(pageDescription(pathname));
 
-  const canonicalUrl = `${CONTACTS.siteUrl}${pathname}`;
-
-  React.useEffect(() => {
-    setTitle(pageTitle(pathname));
-    setDescription(pageDescription(pathname));
-    setOgSiteName(pageOgSiteName(pathname));
-  }, [pathname]);
+  const canonicalUrl = `${SITE_URL}${pathname}`;
 
   return (
     <Helmet>
-      <html lang={LANG} />
-      <title>{title}</title>
+      <html lang={'en_US'} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta name="description" content={description} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <title>{'Agents D-App | EKOKE'}</title>
+      <meta
+        name="description"
+        content={'Agents properties frontend for EKOKE DAO agents'}
+      />
+      <meta property="og:title" content={'Agents D-App | EKOKE'} />
+      <meta
+        property="og:description"
+        content={'Agents properties frontend for EKOKE DAO agents'}
+      />
       <meta property="og:type" content={'website'} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:site_name" content={ogSiteName} />
-      <meta property="og:locale" content={LANG} />
-      {(isPageNotFound(pathname) || noIndex()) && (
-        <meta name="googlebot" content="noindex, nofollow" />
-      )}
+      <meta name="robots" content="noindex" />
+      <meta property="og:site_name" content={'Agents D-App | EKOKE'} />
+      <meta property="og:locale" content={'en_US'} />
     </Helmet>
   );
 };

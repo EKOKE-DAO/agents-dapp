@@ -18,7 +18,7 @@ const PageBtn = (props: PageBtnProps) => (
   <a
     className={`flex items-center justify-center mx-[1px] px-4 rounded-full w-auto h-10 leading-tight text-gray-700 ${
       props.selected
-        ? 'bg-brand text-white hover:bg-brandAlt hover:text-white'
+        ? 'bg-brandRed !text-white font-bold hover:bg-brandAlt hover:text-white'
         : 'bg-white hover:bg-gray-200 hover:text-gray-800'
     } border border-gray-300  `}
   >

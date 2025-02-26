@@ -5,8 +5,7 @@ const Default = (props: React.HTMLProps<HTMLParagraphElement>) => (
     itemProp={props.itemProp}
     itemScope={props.itemScope}
     itemType={props.itemType}
-    className={`${props.className} w-full text-justify text-text`}
-    dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
+    className={`${props.className} w-full mb-3 text-justify text-brand`}
   >
     {props.children}
   </p>
@@ -17,7 +16,7 @@ const Leading = (props: React.HTMLProps<HTMLParagraphElement>) => (
     itemProp={props.itemProp}
     itemScope={props.itemScope}
     itemType={props.itemType}
-    className={`${props.className} w-full mb-3 text-lg text-justify text-text`}
+    className={`${props.className} w-full mb-3 text-lg text-justify text-brand`}
   >
     {props.children}
   </p>
@@ -28,7 +27,7 @@ const Center = (props: React.HTMLProps<HTMLParagraphElement>) => (
     itemProp={props.itemProp}
     itemScope={props.itemScope}
     itemType={props.itemType}
-    className={`${props.className} w-full mb-3 text-lg text-center text-text`}
+    className={`${props.className} w-full mb-3 text-lg md:text-xl text-center text-brand`}
   >
     {props.children}
   </p>

@@ -1,0 +1,21 @@
+{
+  "canisters": {
+    "agents-dapp": {
+      "frontend": {
+        "entrypoint": "src/index.html"
+      },
+      "source": [
+        "dist"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

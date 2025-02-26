@@ -8,19 +8,18 @@ const Container = (props: React.HTMLProps<HTMLDivElement>) => {
   );
 };
 
-const Full = (props: React.HTMLProps<HTMLDivElement>) => {
+const PageContent = (props: React.HTMLProps<HTMLDivElement>) => {
   return (
-    <div
+    <main
       id={props.id}
-      ref={props.ref}
       itemProp={props.itemProp}
       itemScope={props.itemScope}
       itemType={props.itemType}
-      className={`${props.className} w-full`}
       onClick={props.onClick}
+      className={`${props.className} w-9/12 sm:w-11/12 mx-auto`}
     >
       {props.children}
-    </div>
+    </main>
   );
 };
 
@@ -28,12 +27,11 @@ const Flex = (props: React.HTMLProps<HTMLDivElement>) => {
   return (
     <div
       id={props.id}
-      ref={props.ref}
       itemProp={props.itemProp}
       itemScope={props.itemScope}
       itemType={props.itemType}
-      className={`${props.className} flex`}
       onClick={props.onClick}
+      className={`${props.className} flex`}
     >
       {props.children}
     </div>
@@ -44,12 +42,11 @@ const FlexCols = (props: React.HTMLProps<HTMLDivElement>) => {
   return (
     <div
       id={props.id}
-      ref={props.ref}
       itemProp={props.itemProp}
       itemScope={props.itemScope}
       itemType={props.itemType}
-      className={`${props.className} flex flex-col`}
       onClick={props.onClick}
+      className={`${props.className} flex flex-col`}
     >
       {props.children}
     </div>
@@ -60,12 +57,11 @@ const FlexRow = (props: React.HTMLProps<HTMLDivElement>) => {
   return (
     <div
       id={props.id}
-      ref={props.ref}
       itemProp={props.itemProp}
       itemScope={props.itemScope}
       itemType={props.itemType}
-      className={`${props.className} flex flex-row`}
       onClick={props.onClick}
+      className={`${props.className} flex flex-row`}
     >
       {props.children}
     </div>
@@ -76,12 +72,11 @@ const FlexResponsiveRow = (props: React.HTMLProps<HTMLDivElement>) => {
   return (
     <FlexRow
       id={props.id}
-      ref={props.ref}
       itemProp={props.itemProp}
       itemScope={props.itemScope}
       itemType={props.itemType}
-      className={`${props.className} sm:flex-col`}
       onClick={props.onClick}
+      className={`${props.className} sm:flex-col`}
     >
       {props.children}
     </FlexRow>
@@ -94,17 +89,11 @@ interface CardProps extends React.HTMLProps<HTMLDivElement> {
 
 const Card = (props: CardProps) => (
   <div
-    id={props.id}
-    ref={props.ref}
     itemProp={props.itemProp}
     itemScope={props.itemScope}
     itemType={props.itemType}
     onClick={props.onClick}
-    className={`${props.className} ${
-      props.hoverScale
-        ? 'transition-transform transform scale-100 hover:scale-105'
-        : ''
-    } p-6 bg-white border border-gray-200 rounded-lg shadow`}
+    className={`${props.className} ${props.hoverScale ? 'transition-transform transform scale-100 hover:scale-105' : ''} p-6 bg-white border border-gray-200 rounded-lg shadow`}
   >
     {props.children}
   </div>
@@ -116,6 +105,6 @@ export default {
   Flex,
   FlexCols,
   FlexRow,
-  Full,
   FlexResponsiveRow,
+  PageContent,
 };
