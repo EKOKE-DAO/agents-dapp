@@ -1,6 +1,8 @@
 
 .parcel-cache/
 coverage/
+!dist/.ic-assets.json
+!dist/.well-known
 dist/*
 node_modules/
 *.log
@@ -15,3 +17,8 @@ ehthumbs.db
 Thumbs.db
 
 dist/
+
+parcel-bundle-reports/
+
+.dfx/
+.env
