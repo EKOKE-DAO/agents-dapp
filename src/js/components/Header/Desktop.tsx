@@ -17,7 +17,11 @@ const Desktop = () => (
           name="Real Estate"
           entries={[
             {
-              name: 'New real estate',
+              name: 'Your properties',
+              route: Route.REAL_ESTATE_LIST,
+            },
+            {
+              name: 'New property',
               route: Route.REAL_ESTATE_CREATE,
             },
           ]}

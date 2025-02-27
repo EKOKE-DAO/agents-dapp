@@ -6,6 +6,9 @@ export enum Route {
   HOME = 'home',
   PRIVACY = 'privacy',
   REAL_ESTATE_CREATE = 'real-estate/create',
+  REAL_ESTATE_LIST = 'real-estate',
+  REAL_ESTATE_VIEW = 'real-estate/:id',
+  REAL_ESTATE_EDIT = 'real-estate/:id/edit',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -20,6 +23,14 @@ export namespace Route {
 
   export function isRoute(keyOrValue: any): boolean {
     return isEnumKey(keyOrValue) || isEnumValue(keyOrValue);
+  }
+
+  export function realEstateViewUrl(id: bigint): string {
+    return `/real-estate/${id.toString()}`;
+  }
+
+  export function realEstateEditUrl(id: bigint): string {
+    return `/real-estate/${id.toString()}/edit`;
   }
 }
 

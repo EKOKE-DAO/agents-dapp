@@ -115,7 +115,7 @@ const DropdownMenu = ({
 
   return (
     <Container.FlexCols
-      className="animate__animated animate__fadeIn animate__fast bg-white absolute rounded-lg left-[-75%] sm:left-0 top-[80px] sm:top-[30px] rounded-b-lg bg-brandLight shadow-xl h-fit w-[256px] before:absolute before:content-[''] 
+      className="animate__animated animate__fadeIn animate__faster bg-white absolute rounded-lg left-[-75%] sm:left-0 top-[80px] sm:top-[30px] rounded-b-lg bg-brandLight shadow-xl h-fit w-[256px] before:absolute before:content-[''] 
              before:border-8 before:border-transparent 
              before:border-b-brandLight before:top-[-14px] 
              before:left-1/4 before:-translate-x-1/2"

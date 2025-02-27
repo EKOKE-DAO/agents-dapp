@@ -36,7 +36,7 @@ const Alternative = (props: React.HTMLProps<HTMLButtonElement>) => (
 const Danger = (props: React.HTMLProps<HTMLButtonElement>) => (
   <button
     type={'button'}
-    className={`${props.className} py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-red-500 rounded-xl border border-gray-200 hover:bg-red-700 focus:z-10 focus:ring-4 focus:ring-red-200 :ring-red-700 disabled:cursor-not-allowed`}
+    className={`${props.className} py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-red-500 disabled:bg-gray-500 rounded-xl border border-gray-200 hover:bg-red-700 focus:z-10 focus:ring-4 focus:ring-red-200 :ring-red-700 disabled:cursor-not-allowed`}
     disabled={props.disabled}
     onClick={props.onClick}
   >

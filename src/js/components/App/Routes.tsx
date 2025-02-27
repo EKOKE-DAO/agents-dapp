@@ -11,6 +11,10 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 const Cookies = React.lazy(() => import('./pages/Cookies'));
 const Privacy = React.lazy(() => import('./pages/Privacy'));
 
+// real estate
+const RealEstateList = React.lazy(() => import('./pages/RealEstateList'));
+const RealEstateView = React.lazy(() => import('./pages/RealEstateView'));
+
 const AppRouter = () => (
   <>
     <SeoEngine />
@@ -20,6 +24,14 @@ const AppRouter = () => (
           <RouterRoute path={Route.url(Route.HOME)} element={<Home />} />
           <RouterRoute path={Route.url(Route.COOKIES)} element={<Cookies />} />
           <RouterRoute path={Route.url(Route.PRIVACY)} element={<Privacy />} />
+          <RouterRoute
+            path={Route.url(Route.REAL_ESTATE_LIST)}
+            element={<RealEstateList />}
+          />
+          <RouterRoute
+            path={Route.url(Route.REAL_ESTATE_VIEW)}
+            element={<RealEstateView />}
+          />
 
           {/* 404 */}
           <RouterRoute path="*" element={<NotFound />} />

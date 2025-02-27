@@ -6,7 +6,7 @@ import Container from './reusable/Container';
 import InternetComputer from './svg/InternetComputer';
 import { useAppContext } from './App/AppContext';
 import WalletSelector from './IcConnect/WalletSelector';
-import { setUserIcWallet } from '../utils/storage';
+import { getUserIcWallet, setUserIcWallet } from '../utils/storage';
 import DisconnectPopup from './IcConnect/DisconnectPopup';
 
 const IcConnect = () => {
@@ -81,6 +81,14 @@ const IcConnect = () => {
 
   React.useEffect(() => {
     console.log('ic status', status, 'ic wallet', icWallet);
+
+    if (status === 'connected' && icWallet === undefined && setIcWallet) {
+      const storageWallet = getUserIcWallet();
+      if (storageWallet !== undefined) {
+        setIcWallet(storageWallet);
+      }
+    }
+
     if (icWallet !== undefined && status === 'notConnected') {
       connect()
         .then(() => {
@@ -91,7 +99,7 @@ const IcConnect = () => {
           setAppError('Failed to connect to wallet');
         });
     }
-  }, [icWallet, status, connect]);
+  }, [icWallet, status, connect, setIcWallet]);
 
   return (
     <>

@@ -1,6 +1,18 @@
 import { Agency } from '../data/agency';
 import { RealEstate } from '../data/real_estate';
 
+const FIRST_CONTRACT_ID = 1;
+
+export const mockContractIds = (): bigint[] => {
+  const ids = [];
+
+  for (let i = FIRST_CONTRACT_ID; i < 100; i++) {
+    ids.push(BigInt(i));
+  }
+
+  return ids;
+};
+
 export const mockAgency = (owner: string): Agency => {
   return {
     address: 'Via Roma 1',
