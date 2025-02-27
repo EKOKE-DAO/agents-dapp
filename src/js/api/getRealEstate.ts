@@ -10,7 +10,7 @@ import { mockRealEstate } from './mock';
 const getRealEstate = async (id: bigint): Promise<RealEstate> => {
   const url = `/real-estate/${id}`;
 
-  return await deferredDataRequest('GET', url, mockRealEstate(id));
+  return await deferredDataRequest('GET', url, mockRealEstate());
 };
 
 export default getRealEstate;

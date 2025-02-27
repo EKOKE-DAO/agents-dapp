@@ -32,9 +32,8 @@ export const mockAgency = (owner: string): Agency => {
   };
 };
 
-export const mockRealEstate = (id: bigint): RealEstate => {
+export const mockRealEstate = (): RealEstate => {
   return {
-    id,
     name: 'Villa in the heart of London',
     description: 'A beautiful villa in the heart of London',
     image: 'https://placecats.com/300/300',
