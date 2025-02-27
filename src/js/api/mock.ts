@@ -46,7 +46,7 @@ export const mockRealEstate = (id: bigint): RealEstate => {
     latitude: 45.464664,
     longitude: 9.18854,
     zone: 'City Center',
-    squareMeters: 200,
+    square_meters: 200,
     rooms: 4,
     bathrooms: 2,
     bedrooms: 2,
@@ -56,9 +56,10 @@ export const mockRealEstate = (id: bigint): RealEstate => {
     garage: true,
     pool: false,
     parking: false,
-    yearOfConstruction: 2017,
-    energyClass: 'A',
-    youtubeUrl: 'https://www.youtube.com/watch?v=DHaeadPJoJY',
+    elevator: true,
+    year_of_construction: 2017,
+    energy_class: 'A',
+    youtube: 'https://www.youtube.com/watch?v=DHaeadPJoJY',
   };
 };
 

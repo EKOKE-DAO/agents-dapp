@@ -1,5 +1,4 @@
 export interface RealEstate {
-  id: bigint;
   name: string;
   description: string;
   image?: string;
@@ -12,17 +11,18 @@ export interface RealEstate {
   longitude?: number;
   zone?: string;
   city?: string;
-  squareMeters?: number;
+  square_meters?: number;
   rooms?: number;
   bathrooms?: number;
   bedrooms?: number;
   floors?: number;
   balconies?: number;
-  garden: boolean;
-  pool: boolean;
-  garage: boolean;
-  parking: boolean;
-  yearOfConstruction?: number;
-  energyClass?: string;
-  youtubeUrl?: string;
+  garden?: boolean;
+  pool?: boolean;
+  garage?: boolean;
+  parking?: boolean;
+  elevator?: boolean;
+  year_of_construction?: number;
+  energy_class?: string;
+  youtube?: string;
 }

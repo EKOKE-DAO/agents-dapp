@@ -9,19 +9,34 @@ import Skeleton from 'react-loading-skeleton';
 import RealEstateCard from './RealEstateList/RealEstateCard';
 import Heading from '../../reusable/Heading';
 
-const getAllRealEstates = async (agent: string): Promise<RealEstate[]> => {
+interface RealEstateWithId {
+  id: bigint;
+  data: RealEstate;
+}
+
+const getAllRealEstates = async (
+  agent: string,
+): Promise<RealEstateWithId[]> => {
   const ids = await getRealEstates({
     agent,
   });
 
-  return await Promise.all(ids.map((id) => getRealEstate(id)));
+  return await Promise.all(
+    ids.map(async (id) => {
+      const data = await getRealEstate(id);
+      return {
+        id,
+        data,
+      };
+    }),
+  );
 };
 
 const RealEstateList = () => {
   const { agent, setAppError } = useAppContext();
 
   const [realEstateList, setRealEstateList] = React.useState<
-    RealEstate[] | undefined
+    RealEstateWithId[] | undefined
   >(undefined);
 
   React.useEffect(() => {
@@ -39,9 +54,15 @@ const RealEstateList = () => {
       });
   }, [agent]);
 
+  console.log(realEstateList);
+
   const items = realEstateList
     ? realEstateList.map((realEstate) => (
-        <RealEstateCard key={realEstate.id} realEstate={realEstate} />
+        <RealEstateCard
+          key={realEstate.id.toString()}
+          id={realEstate.id}
+          realEstate={realEstate.data}
+        />
       ))
     : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
         <Container.Card key={i} className="w-[400px] h-[400px]">

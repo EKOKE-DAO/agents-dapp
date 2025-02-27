@@ -3,7 +3,7 @@ import * as React from 'react';
 const Cta = (props: React.HTMLProps<HTMLButtonElement>) => (
   <button
     type={'button'}
-    className={`${props.className} text-white bg-brand hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-lg px-5 py-2.5 mr-2 mb-2 800 :bg-gray-700 :ring-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed`}
+    className={`${props.className} text-white bg-brandBtn hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-lg px-5 py-2.5 mr-2 mb-2 800 :bg-gray-700 :ring-gray-700 disabled:bg-gray-800 disabled:cursor-not-allowed`}
     disabled={props.disabled}
     onClick={props.onClick}
   >
@@ -14,7 +14,7 @@ const Cta = (props: React.HTMLProps<HTMLButtonElement>) => (
 const Primary = (props: React.HTMLProps<HTMLButtonElement>) => (
   <button
     type={'button'}
-    className={`${props.className} text-white bg-brandBtn hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-xl text-sm px-5 py-2.5 mr-2 mb-2 disabled:cursor-not-allowed`}
+    className={`${props.className} text-white bg-brandBtn hover:bg-gray-900 disabled:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-xl text-sm px-5 py-2.5 mr-2 mb-2 disabled:cursor-not-allowed`}
     disabled={props.disabled}
     onClick={props.onClick}
   >

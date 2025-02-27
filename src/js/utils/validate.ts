@@ -93,6 +93,18 @@ export const validateWebsite = (
   );
 };
 
+export const validateURL = (
+  input: string | number | readonly string[] | undefined,
+) => {
+  return (
+    input
+      ?.toString()
+      .match(
+        /^(https?:\/\/)?([a-zA-Z0-9.]+)\.([a-z]{2,})(\/[a-zA-Z0-9,.=~+_&#?\-/]+\/?)*$/,
+      ) !== null
+  );
+};
+
 export const validatePostTitle = (
   input: string | number | readonly string[] | undefined,
 ) => {
@@ -101,4 +113,22 @@ export const validatePostTitle = (
     return false;
   }
   return input?.toString().length > 0 && input?.toString().length <= 100;
+};
+
+export const validateLatitude = (
+  input: string | number | readonly string[] | undefined,
+) => {
+  return (
+    input?.toString().match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$/) !== null
+  );
+};
+
+export const validateLongitude = (
+  input: string | number | readonly string[] | undefined,
+) => {
+  return (
+    input
+      ?.toString()
+      .match(/^[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/) !== null
+  );
 };

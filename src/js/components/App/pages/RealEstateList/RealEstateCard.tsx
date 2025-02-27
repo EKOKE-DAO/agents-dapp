@@ -9,10 +9,11 @@ import Paragraph from '../../../reusable/Paragraph';
 import Button from '../../../reusable/Button';
 
 interface Props {
+  id: bigint;
   realEstate: RealEstate;
 }
 
-const RealEstateCard = ({ realEstate }: Props) => (
+const RealEstateCard = ({ id, realEstate }: Props) => (
   <Container.Card className="!p-0 !px-0 !py-0" hoverScale>
     {realEstate.image && (
       <img
@@ -38,11 +39,11 @@ const RealEstateCard = ({ realEstate }: Props) => (
         {realEstate.country && <span>{realEstate.country}</span>}
       </Container.Container>
       <Container.FlexResponsiveRow className="items-center gap-4 py-4">
-        <Link.Button href={Route.realEstateViewUrl(realEstate.id)}>
+        <Link.Button href={Route.realEstateViewUrl(id)}>
           <MdIcon.MdVisibility className="mr-2 inline" size={24} />
           View
         </Link.Button>
-        <Link.Button href={Route.realEstateEditUrl(realEstate.id)}>
+        <Link.Button href={Route.realEstateEditUrl(id)}>
           <MdIcon.MdEdit className="mr-2 inline" size={24} />
           Edit
         </Link.Button>

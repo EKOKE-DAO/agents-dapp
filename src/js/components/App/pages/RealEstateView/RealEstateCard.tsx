@@ -43,13 +43,13 @@ const RealEstateCard = ({ realEstate }: Props) => (
                 {realEstate.rooms} Rooms
               </Container.Container>
             )}
-            {realEstate.squareMeters !== undefined && (
+            {realEstate.square_meters !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdSquareFoot
                   size={16}
                   className="text-gray-500 mr-2 inline"
                 />
-                {realEstate.squareMeters} Square Meters
+                {realEstate.square_meters} Square Meters
               </Container.Container>
             )}
             {realEstate.bathrooms !== undefined && (
@@ -70,13 +70,13 @@ const RealEstateCard = ({ realEstate }: Props) => (
                 {realEstate.bedrooms} Bedrooms
               </Container.Container>
             )}
-            {realEstate.yearOfConstruction !== undefined && (
+            {realEstate.year_of_construction !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdCalendarToday
                   size={16}
                   className="text-gray-500 mr-2 inline"
                 />
-                {realEstate.yearOfConstruction}
+                {realEstate.year_of_construction}
               </Container.Container>
             )}
             {realEstate.balconies !== undefined && (
@@ -128,9 +128,9 @@ const RealEstateCard = ({ realEstate }: Props) => (
         </Container.FlexCols>
       </Container.FlexResponsiveRow>
       <Paragraph.Leading>{realEstate.description}</Paragraph.Leading>
-      {realEstate.youtubeUrl && (
+      {realEstate.youtube && (
         <Container.Container className="mx-auto">
-          <YoutubeVideo width={720} url={realEstate.youtubeUrl} />
+          <YoutubeVideo width={720} url={realEstate.youtube} />
         </Container.Container>
       )}
     </Container.FlexCols>

@@ -4,6 +4,8 @@ const DEFERRED_MINTER_API_URL =
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
+const MOCK_ENABLED: boolean = false;
+
 /**
  * @description Sends a request to the deferred-minter API
  * @param method the HTTP method to use
@@ -58,7 +60,7 @@ const __sendJsonRequest = async <T>(
   body?: any,
   onError?: (statusCode: number, error: any) => void,
 ): Promise<T> => {
-  const development = process.env.NODE_ENV === 'development';
+  const development = process.env.NODE_ENV === 'development' && MOCK_ENABLED;
   if (development) {
     console.log('MOCK', method, path);
     // simulate a delay

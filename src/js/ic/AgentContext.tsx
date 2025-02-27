@@ -2,47 +2,39 @@ import * as React from 'react';
 import { ActorSubclass } from '@dfinity/agent';
 import { useIcWallet } from 'react-ic-wallet';
 
-import { IcpLedger, idlFactory as icpLedgerIdlFactory } from './icp-ledger.did';
 import {
-  Marketplace,
-  idlFactory as marketplaceIdlFactory,
-} from './marketplace.did';
+  DeferredMinter,
+  idlFactory as deferredMinterIdlFactory,
+} from './deferred_minter.did';
 
-const ICP_LEDGER_CANISTER_ID = 'ryjl3-tyaaa-aaaaa-aaaba-cai';
-const MARKETPLACE_CANISTER_ID = 'ss2fx-dyaaa-aaaar-qacoq-cai'; // FIXME: change
+const DEFERRED_MINTER_CANISTER_ID = '2f5ik-ciaaa-aaaal-aruna-cai';
 
 interface Context {
-  icpLedger?: ActorSubclass<IcpLedger>;
-  marketplace?: ActorSubclass<Marketplace>;
+  deferredMinter?: ActorSubclass<DeferredMinter>;
 }
 
 const AgentContext = React.createContext<Context>({});
 
 const AgentContextProvider = ({ children }: { children?: React.ReactNode }) => {
-  const [icpLedger, setIcpLedger] = React.useState<ActorSubclass<IcpLedger>>();
-  const [marketplace, setMarketplace] =
-    React.useState<ActorSubclass<Marketplace>>();
+  const [deferredMinter, setDeferredMinter] =
+    React.useState<ActorSubclass<DeferredMinter>>();
 
   const { createActor, status } = useIcWallet();
 
   React.useEffect(() => {
     if (status === 'connected') {
-      createActor(ICP_LEDGER_CANISTER_ID, icpLedgerIdlFactory).then((actor) => {
-        setIcpLedger(actor as ActorSubclass<IcpLedger>);
-      });
-      createActor(MARKETPLACE_CANISTER_ID, marketplaceIdlFactory).then(
+      createActor(DEFERRED_MINTER_CANISTER_ID, deferredMinterIdlFactory).then(
         (actor) => {
-          setMarketplace(actor as ActorSubclass<Marketplace>);
+          setDeferredMinter(actor as ActorSubclass<DeferredMinter>);
         },
       );
     } else {
-      setIcpLedger(undefined);
-      setMarketplace(undefined);
+      setDeferredMinter(undefined);
     }
   }, [status]);
 
   return (
-    <AgentContext.Provider value={{ icpLedger, marketplace }}>
+    <AgentContext.Provider value={{ deferredMinter }}>
       {children}
     </AgentContext.Provider>
   );
