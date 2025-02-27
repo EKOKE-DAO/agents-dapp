@@ -4,10 +4,12 @@
   <img src="./assets/images/ekoke-logo.png" alt="ekoke logo" width="256" />
 </p>
 
-![Frontend](https://github.com/EKOKEtoken/agents-dapp/workflows/frontend/badge.svg)
+[![CI](https://github.com/EKOKE-DAO/agents-dapp/actions/workflows/ci.yml/badge.svg)](https://github.com/EKOKE-DAO/agents-dapp/actions/workflows/ci.yml)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 Powered by **Internet Computer**
+
+Canister ID: `4ug6a-tiaaa-aaaal-ar7jq-cai`
 
 ---
 
@@ -34,6 +36,7 @@ Before getting started with ekoke, you need to install these dependencies:
 ### Build
 
 ```sh
+yarn
 yarn build
 ```
 
