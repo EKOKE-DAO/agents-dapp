@@ -17,8 +17,6 @@ const IcAuthWall = ({ children }: Props) => {
   const { icWallet, setIcWallet, setAppError, agent, setAgent } =
     useAppContext();
 
-  const [fetchedWallet, setFetchedWallet] = React.useState<boolean>(false);
-
   const onSelectWallet = (wallet: WalletProvider) => {
     if (setIcWallet) {
       setIcWallet(wallet);
@@ -27,7 +25,6 @@ const IcAuthWall = ({ children }: Props) => {
 
   React.useEffect(() => {
     if (status === 'connected' && icWallet === undefined && setIcWallet) {
-      setFetchedWallet(true);
       const storageWallet = getUserIcWallet();
       if (storageWallet !== undefined) {
         setIcWallet(storageWallet);
@@ -40,7 +37,6 @@ const IcAuthWall = ({ children }: Props) => {
       status === 'notConnected' &&
       setIcWallet !== undefined
     ) {
-      setFetchedWallet(true);
       connect()
         .then(() => {
           setUserIcWallet(icWallet);
@@ -58,7 +54,6 @@ const IcAuthWall = ({ children }: Props) => {
       setAgent !== undefined &&
       setIcWallet !== undefined
     ) {
-      setFetchedWallet(true);
       // get agent associated to this wallet
       const principalStr = principal.toText();
 
@@ -77,10 +72,6 @@ const IcAuthWall = ({ children }: Props) => {
         });
     }
   }, [icWallet, status, connect, principal, setAgent, setIcWallet]);
-
-  if (fetchedWallet === false) {
-    return null;
-  }
 
   if (status === 'connected' && icWallet !== undefined && agent !== undefined) {
     return <>{children}</>;
