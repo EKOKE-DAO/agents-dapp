@@ -2,7 +2,7 @@
   "canisters": {
     "agents-dapp": {
       "frontend": {
-        "entrypoint": "src/index.html"
+        "entrypoint": "./index.html"
       },
       "source": [
         "dist"
