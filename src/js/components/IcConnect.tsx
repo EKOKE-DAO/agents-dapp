@@ -11,7 +11,7 @@ import DisconnectPopup from './IcConnect/DisconnectPopup';
 
 const IcConnect = () => {
   const { status, connect, disconnect, principal } = useIcWallet();
-  const { icWallet, setIcWallet } = useAppContext();
+  const { icWallet, setIcWallet, setAppError } = useAppContext();
   const [showWalletSelector, setShowWalletSelector] = React.useState(false);
   const [showDisconnectPopup, setShowDisconnectPopup] = React.useState(false);
 
@@ -63,6 +63,7 @@ const IcConnect = () => {
         })
         .catch((e) => {
           console.error('Failed to connect to wallet', e);
+          setAppError('Failed to connect to wallet');
         });
     }
   }, [icWallet, status, connect]);

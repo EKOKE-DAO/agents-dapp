@@ -7,6 +7,7 @@ import AppContextProvider, {
 } from './js/components/App/AppContext';
 import AppError from './js/components/Status/AppError';
 import AppSuccess from './js/components/Status/AppSuccess';
+import IcAuthWall from './js/components/IcAuthWall';
 
 const App = () => (
   <AppContextProvider>
@@ -21,7 +22,9 @@ const AppLayoutWrapper = () => {
     <IcWalletProvider provider={icWallet}>
       <AppError />
       <AppSuccess />
-      <AppLayout />
+      <IcAuthWall>
+        <AppLayout />
+      </IcAuthWall>
     </IcWalletProvider>
   );
 };

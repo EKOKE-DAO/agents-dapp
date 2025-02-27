@@ -1,9 +1,10 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import Container from './reusable/Container';
 import Page from './reusable/Page';
 import Header from './Header';
 import Footer from './Footer';
 import Routes from './App/Routes';
-import { BrowserRouter } from 'react-router-dom';
 
 const AppLayout = () => {
   return (
