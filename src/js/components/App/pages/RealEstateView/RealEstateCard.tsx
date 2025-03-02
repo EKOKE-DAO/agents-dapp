@@ -15,15 +15,17 @@ const RealEstateCard = ({ realEstate }: Props) => (
   <Container.Card>
     <Container.FlexCols className="gap-4">
       <Container.FlexResponsiveRow className="gap-8">
-        <Container.Container>
-          <img
-            src={realEstate.image}
-            alt={realEstate.name}
-            className="w-full sm:object-cover sm:h-[300px] rounded-lg"
-            width={300}
-            height={300}
-          />
-        </Container.Container>
+        {realEstate.image && (
+          <Container.Container>
+            <img
+              src={realEstate.image}
+              alt={realEstate.name}
+              className="w-full sm:object-cover sm:h-[300px] rounded-lg"
+              width={300}
+              height={300}
+            />
+          </Container.Container>
+        )}
         <Container.FlexCols className="gap-2">
           <Heading.H1L>{realEstate.name}</Heading.H1L>
           <Container.Container className="text-sm text-gray-500">
