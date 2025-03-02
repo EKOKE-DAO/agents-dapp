@@ -15,6 +15,7 @@ const Privacy = React.lazy(() => import('./pages/Privacy'));
 const RealEstateList = React.lazy(() => import('./pages/RealEstateList'));
 const RealEstateView = React.lazy(() => import('./pages/RealEstateView'));
 const RealEstateCreate = React.lazy(() => import('./pages/RealEstateCreate'));
+const RealEstateEdit = React.lazy(() => import('./pages/RealEstateEdit'));
 
 const AppRouter = () => (
   <>
@@ -32,6 +33,10 @@ const AppRouter = () => (
           <RouterRoute
             path={Route.url(Route.REAL_ESTATE_CREATE)}
             element={<RealEstateCreate />}
+          />
+          <RouterRoute
+            path={Route.url(Route.REAL_ESTATE_EDIT)}
+            element={<RealEstateEdit />}
           />
           <RouterRoute
             path={Route.url(Route.REAL_ESTATE_VIEW)}

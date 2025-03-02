@@ -39,6 +39,16 @@ const RealEstateList = () => {
     RealEstateWithId[] | undefined
   >(undefined);
 
+  const onRealEstateDelete = (id: bigint) => {
+    setRealEstateList((prev) => {
+      if (!prev) {
+        return prev;
+      }
+
+      return prev.filter((realEstate) => realEstate.id !== id);
+    });
+  };
+
   React.useEffect(() => {
     if (agent === undefined) {
       return;
@@ -62,6 +72,7 @@ const RealEstateList = () => {
           key={realEstate.id.toString()}
           id={realEstate.id}
           realEstate={realEstate.data}
+          onDelete={onRealEstateDelete}
         />
       ))
     : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
